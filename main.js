@@ -1,19 +1,38 @@
-const botoes = Document.querySelectorAll (".botao");
-const textos = document.querySelectorAll (".aba-conteudo");
+const numeroSenha = document.querySelector('.parametro-senha__texto');
+let tamanhoSenha = 12;
+numeroSenha.textContent = tamanhoSenha;
+const letrasMaiusculas = 'ABCDEFGHIJKLMNOPQRSTUVXYWZ';
+const letrasMinusculas = 'abcdefghijklmnopqrstuvxywz';
+const numeros = '0123456789';
+const simbolos = '!@%*?';
+const botoes = document.querySelectorAll('.parametro-senha__botao');
+const campoSenha = document.querySelector('#campo-senha');
+const checkbox = document.querySelectorAll('.checkbox');
+const forcaSenha = document.querySelector('.forca');
 
-for (let i = 0; i <botoes.length; i++) {
-botoes[i].onclick = function () 
+botoes[0].onclick = diminuiTamanho;
+botoes [1].onclick = aumentaTamanho;
 
-for (let j = 0; j < botoes.length; j++) {
-botoes [j].classlist.remove("ativo");
-textos[j].classlist.remove("ativo");  
+function diminuiTamanho() {
+    if (tamanhoSenha > 1){
+        // tamanhoSenha = tamanhosenha-1;
+        tamanhoSenha--;
+}
+numeroSenha.textContent = tamanhoSenha;
+geraSenha();
+}
+function aumentaTamanho() {
+    if (tamanhoSenha < 20) {
+        // tamanhoSenha = tamanhoSenha+1;
+        tamanhoSenha++;
+    }
+    numeroSenha.textContent = tamanhoSenha;
+    geraSenha();
 }
 
-botoes[I]. classlist.add("ativo");
-textos[i]. classList.add("ativo");
-} 
-
-
+for (i = 0; i < checkbox.length; i++) {
+    
+}
 const contadores = document.querySelectorAll(".contaor");
 const tempoObjetivo1 = new Date("2020-10-05T00:00:00");
 const tempoObjetivo2 = new Date("2023-12-05T00:00:00");
