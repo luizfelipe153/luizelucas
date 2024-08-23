@@ -31,7 +31,33 @@ function aumentaTamanho() {
 }
 
 for (i = 0; i < checkbox.length; i++) {
-    
+    checkbox[i].onclick = geraSenha;
+}
+
+geraSenha();
+
+function geraSenha() {
+    let alfabeto = '';
+    if (checkbox[0].checked) {
+        alfabeto = alfabeto + letrasMinusculas;
+    }
+    if (checkbox[1].checked) {
+        alfabeto = alfabeto + letrasMinusculas;
+    }
+    if (checkbox[2].checked) {
+        alfabeto = alfabeto + numeros;
+    }
+    if (checkbox[3].checked) {
+        alfabeto = alfabeto + simbolos;
+    }
+    let senha = '';
+    for (let i = 0; i < tamanhoSenha; i++) {
+        let numeroAleatorio = Math.random() * alfabeto.length;
+        numeroAleatorio = Math.floor(numeroAleatorio);
+        senha = senha + alfabeto[numeroAleatorio];
+    }
+    campoSenha.value = senha;
+    classificasenha
 }
 const contadores = document.querySelectorAll(".contaor");
 const tempoObjetivo1 = new Date("2020-10-05T00:00:00");
