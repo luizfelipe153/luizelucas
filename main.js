@@ -26,9 +26,8 @@ function aumentaTamanho(){
         //tamanhoSenha = tamanhoSenh+1;
         tamanhoSenha++;
     }
-
-    numeroSenha.textContent = tamanhoSenha;
-    geraSenha();
+numeroSenha.textContent = tamanhoSenha;
+geraSenha();
 }
 
     for (i = 0; 1 < checkbox.length; i++) {
@@ -43,14 +42,14 @@ function geraSenha(){
         alfabeto = alfabeto + letrasMaiusculas;
     }
    if (checkbox[1].checked) {
+    alfabeto = alfabeto + letrasMaiusculas;
     }
     if (checkbox[2].checked) {
-        alfabeto = alfabeto = numeros;
+        alfabeto = alfabeto + numeros;
     }
     if (checkbox[3].checked) {
-        alfabeto = alfabeto = simbolos;
+        alfabeto = alfabeto + simbolos;
     }
-}
 let senha = '';
 for (let i = 0; i < tamanhoSenha; i++) {
     let numeroAleatorio = Math.random() * alfabeto.length;
@@ -59,6 +58,8 @@ for (let i = 0; i < tamanhoSenha; i++) {
 }
 campoSenha.value = senha;
 classificaSenha(alfabeto.lenght);
+
+}
 
 function classificaSenha(tamanhoAlfabeto){
     let entropia = tamanhoSenha * Math.log2(tamanhoAlfabeto);
@@ -73,5 +74,4 @@ function classificaSenha(tamanhoAlfabeto){
     }
     const valorEntropia = document.querySelector('.entropia');
     valorEntropia.textContent = "Um computador pode levar ate" + Math.floor(2**entropia/(100e6*60*60*24)) + "dias para"
-
 }
